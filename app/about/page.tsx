@@ -34,7 +34,7 @@ export default async function About() {
                     {about.clientsSection.title}
                 </h2>
 
-                <div className="mt-6 md:mt-12 flex flex-wrap items-center justify-center gap-6 md:gap-10 lg:gap-14">
+                <div className="mt-6 md:mt-12 flex flex-col md:flex-row flex-wrap items-center justify-center gap-6 md:gap-10 lg:gap-14">
                     {about.clientsSection.clients?.map((client, index) => {
                         const Logo = (
                             <Image
