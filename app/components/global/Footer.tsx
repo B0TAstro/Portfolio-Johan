@@ -88,6 +88,11 @@ export default function Footer() {
           <p className="font-light text-[10px] text-center">
             © Johan Vuillerme {new Date().getFullYear()}
           </p>
+          <div className="font-light text-[10px] text-center text-black mt-1">
+            <Link href="https://github.com/B0TAstro" className="text-black">
+              Made by B0TAstro
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
