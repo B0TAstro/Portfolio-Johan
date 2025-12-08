@@ -1,9 +1,5 @@
 @import "tailwindcss";
 
-/* * {
-  outline: 1px solid red;
-} */
-
 /* Global Styles */
 .custom-strong strong {
   @apply font-black;
