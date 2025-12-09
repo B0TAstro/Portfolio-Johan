@@ -7,6 +7,7 @@ import { getSingleProject } from "@/lib/sanity.query";
 import type { ProjectType } from "@/types";
 import { PortableText } from "@portabletext/react";
 import VideoWithHoverControls from "@/app/components/VideoWithHoverControls";
+import FullscreenImage from "@/app/components/shared/FullscreenImage";
 import { ArrowLeft } from "lucide-react";
 import { notFound } from "next/navigation";
 
@@ -86,12 +87,13 @@ export default async function ProjectPage({ params }: Props) {
             className="object-cover w-full h-full"
           />
         ) : (
-          <Image
-            src={project.coverMedia.image?.url || ""}
-            alt={project.coverMedia.image?.alt || project.title}
-            fill
-            className="object-cover"
+          <FullscreenImage
+            src={project.coverMedia?.image?.url}
+            alt={project.coverMedia?.image?.alt || project.title}
+            className="w-full h-full"
+            imageClassName="object-cover"
             priority
+            loading="lazy"
           />
         )}
       </div>
@@ -131,11 +133,12 @@ export default async function ProjectPage({ params }: Props) {
                     className="object-cover w-full h-full"
                   />
                 ) : item.image?.url ? (
-                  <Image
+                  <FullscreenImage
                     src={item.image.url}
-                    alt={item.image.alt || `Image Gallery`}
-                    fill
-                    className="object-cover transition-transform duration-350 group-hover:scale-101"
+                    alt={item.image.alt || "Image Gallery"}
+                    caption={item.image.caption}
+                    className="w-full h-full"
+                    imageClassName="object-cover transition-transform duration-350 group-hover:scale-101"
                     loading="lazy"
                   />
                 ) : null}
